@@ -1,0 +1,19 @@
+
+#production:
+#adapter: postgresql
+#encoding: unicode
+#pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+#url: "postgres://ariharan:aBoy67wVUtspA3VLzk9qE9dXlrbXVxSz@dpg-cgm02dbhp8u2dv5kdk90-a.oregon-postgres.render.com/postogram"
+
+default: &default
+  adapter: sqlite3
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
+production:
+  <<: *default
+  database: db/production.sqlite3
+  #development:
+  #adapter: postgresql
+  #encoding: unicode
+  #pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  #url: "postgres://ariharan:aBoy67wVUtspA3VLzk9qE9dXlrbXVxSz@dpg-cgm02dbhp8u2dv5kdk90-a.oregon-postgres.render.com/postogram"
